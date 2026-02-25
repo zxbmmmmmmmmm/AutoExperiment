@@ -1,9 +1,11 @@
 package com.willturr.etsolver.client.modules.solvers;
 
+import net.minecraft.block.PaneBlock;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.ingame.GenericContainerScreen;
 import net.minecraft.client.network.ClientPlayerInteractionManager;
 import net.minecraft.inventory.Inventory;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.screen.slot.SlotActionType;
@@ -35,7 +37,8 @@ public class UltrasequencerSolver extends AbstractSolver{
         if (currentModeItem == Items.GLOWSTONE) {
             startSeconds = -1;
             for (int i = 0; i < 45; i++) {
-                if (!inventory.getStack(i).getItem().getName().getString().endsWith("Pane")) {
+                var item = inventory.getStack(i).getItem();
+                if (!(item instanceof BlockItem blockItem && blockItem.getBlock() instanceof PaneBlock)) {
                     //System.out.println(inventory.getStack(i).getItem().getName().getString());
                     if (inventory.getStack(i).getCount() == (clickStack.size() + 1)) {
                         clickStack.add(i); //add item index to stack
