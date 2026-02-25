@@ -6,7 +6,7 @@ Maximising Enchanting XP from the Experimentation Table is tedious enough, let a
 
 ## How to use:
 
-- Requires Fabric (API) 1.21.6.
+- Requires Fabric (API) 1.21.11.
 - Disable any other solvers (Skyblocker, etc) within their respective mod configs
 - Place etsolver in your mods folder
 - Open the experimentation table and select the minigame to automate
